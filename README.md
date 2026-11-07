@@ -69,6 +69,7 @@ dsh plugin --profile desktop add https://github.com/tiamo-Li/dsh-opencode-go-quo
 - Key 只留在 Host；响应与日志均不含 Key。浏览器只收到三个窗口的数值、重置时间，以及可见 provider 列表与轮询周期。
 - 请求失败时降级为 `—`，不会伪造用量；可点浮层里的重试按钮手动刷新。
 - 除 OpenCode 官方额度接口外，插件不向任何第三方发请求。
+- 额度接口由 DSH 本机 Web 服务提供（仅监听 loopback 地址）；同一台机器上的其它进程理论上可读取这些聚合百分比，但拿不到 API Key，也不涉及会话内容。
 
 ## 排障
 

@@ -173,7 +173,7 @@ ctx.effect(() => ctx.slots.inject('conversation.composer.dock', function* () {
   - 标题行：左侧 `t('title')`（`OpenCode Go quota`），右侧当前 Rolling 百分比（`var(--dsw-alias-label-primary)`，font-weight 500）。
   - 三行（`Rolling` / `Weekly` / `Monthly`，见下方「文案」）：三行共用一个 grid（`.ogq-rows` 为 grid，`.ogq-row` 为 `display: contents`），三列 = 周期标签（固定 62px）+ 用量组（1fr）+ 刷新/重置时间（auto，右对齐）。**用量组是一个 flex 容器，4px 迷你进度条（`flex:1`）与用量百分比（固定 40px、右对齐）紧邻**，条与数字始终挨在一起且三行对齐；周期、用量组、刷新时间三列在行间各自对齐。用量与刷新时间是两个独立单元格，**不使用「·」拼接**。数字列一律 `tabular-nums`，百分比 `var(--dsw-alias-label-primary)`、重置时间 `var(--dsw-alias-label-tertiary)`。
   - 倒计时统一英文紧凑单位：`Resets in 29d 0h` / `1d 12h` / `4h 54m` / `12m` / `<1m`（天/时可出现 0：29d 0h）。中文标签与中文单位会导致各行列宽参差，因此**面板可见文本固定英文**，`aria-label` 仍按界面语言本地化。
-  - 失败时显示错误摘要 + 重试按钮（文字次要色，hover 变色），替代三行内容。
+  - 失败时显示错误摘要 + 重试按钮（文字次要色，hover 变色），替代三行内容；此时标题行右侧读数显示 `—`，不回显上一次的陈旧百分比。
 - 关闭后焦点回到触发器（不做也行，但不要报错）。
 
 ### 数据获取（浏览器侧）

@@ -68,6 +68,7 @@ Example:
 - The Host calls the official quota endpoint `GET {baseURL}/usage` with the configured key and reads `usage.rolling / usage.weekly / usage.monthly` (`percent`, `resetsAt`, `status`).
 - The key never leaves the Host; responses and logs contain no key. The browser only receives the three window readings, reset times, the visible provider list and the poll cadence.
 - On failure the indicator degrades to `—` instead of inventing numbers; the expanded panel offers a manual retry.
+- The quota route is served by the local DSH web server (loopback listener only); other processes on the same machine could in principle read those aggregate percentages, but never the API key or session content.
 
 ## Troubleshooting
 
