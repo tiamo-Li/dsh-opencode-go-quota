@@ -5,7 +5,7 @@
 > [!NOTE]
 > **如果你使用 [Duskriver/dsh-opencode-go](https://github.com/Duskriver/dsh-opencode-go) 插件配置 API Key：**
 > - 需要在 DSH 官方的模型配置处同样添加该 API Key（`llm-pi-ai` → `opencode-go`；本插件读取的是官方凭据 `OPENCODE_GO_API_KEY`）。
-> - 为避免两个插件重复显示用量：可以在官方模型配置处取消 Go 订阅的所有可用模型，并在 Duskriver/dsh-opencode-go 插件设置处取消「用量悬浮球」显示。
+> - 为避免该插件和官方配置模型重复、以及与本插件重复显示用量：可以在官方模型配置处取消 Go 订阅的所有可用模型，并在 Duskriver/dsh-opencode-go 插件设置处取消「用量悬浮球」显示。
 
 [English](./README.en.md) | 中文
 

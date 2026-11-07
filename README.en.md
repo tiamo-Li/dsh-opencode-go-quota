@@ -5,7 +5,7 @@ A small [DeepSeek Harness (DSH)](https://github.com/deepseek-ai/deepseek-harness
 > [!NOTE]
 > **Using the [Duskriver/dsh-opencode-go](https://github.com/Duskriver/dsh-opencode-go) plugin to configure your API key?**
 > - Add the same API key in the official DSH model configuration too (`llm-pi-ai` → `opencode-go`); this plugin reads the official credential `OPENCODE_GO_API_KEY`.
-> - To avoid duplicate indicators: deselect every Go-subscription model in the official model configuration, and turn off the usage floating pill in the Duskriver plugin settings.
+> - To avoid duplicating the models that plugin provides and the officially configured ones, and avoid duplicate usage indicators with this plugin: deselect every Go-subscription model in the official model configuration, and turn off the usage floating pill in the Duskriver plugin settings.
 
 [中文](./README.md) | English
 
