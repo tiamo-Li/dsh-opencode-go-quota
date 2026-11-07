@@ -123,9 +123,10 @@ assert.ok(styleTags[0].textContent.includes('.ogq-trigger'))
 assert.ok(styleTags[0].textContent.includes('var(--dsw-radius-sm)'))
 assert.ok(styleTags[0].textContent.includes('.ogq-panel'))
 assert.match(styleTags[0].textContent, /\.ogq-root\s*\{[^}]*order:\s*1/, 'root uses CSS order to sit after the context meter')
-assert.match(styleTags[0].textContent, /\.ogq-rows\s*\{[^}]*grid-template-columns:\s*62px 1fr auto/, 'shared grid keeps the three row columns aligned')
+assert.match(styleTags[0].textContent, /\.ogq-rows\s*\{[^}]*grid-template-columns:\s*62px max-content 1fr/, 'shared grid keeps the three row columns aligned')
 assert.match(styleTags[0].textContent, /\.ogq-row-usage\s*\{[^}]*display:\s*flex/, 'bar and percent share one usage group')
-assert.match(styleTags[0].textContent, /\.ogq-row-percent\s*\{[^}]*width:\s*40px/, 'usage percent keeps a fixed aligned width')
+assert.match(styleTags[0].textContent, /\.ogq-row-bar\s*\{[^}]*width:\s*48px/, 'usage bar keeps a fixed track width next to the number')
+assert.match(styleTags[0].textContent, /\.ogq-row-reset\s*\{[^}]*justify-self:\s*start/, 'reset countdown is left aligned')
 assert.match(styleTags[0].textContent, /\.ogq-row\s*\{\s*display:\s*contents/, 'rows are contents so one grid aligns all cells')
 
 assert.deepEqual(log.slotInjections, ['conversation.composer.dock'])
@@ -174,5 +175,6 @@ const throwingInjected = descriptor.inject.call(throwingCtx, 'session-1')
 assert.ok(throwingInjected !== undefined)
 
 console.log('client-smoke: all structural checks passed')
+
 
 

@@ -8,7 +8,7 @@ It adds a quota indicator to the composer dock (the stats row below the message 
 
 - Only visible when the session's selected model belongs to OpenCode Go (`opencode-go` or `dsh-opencode-go`); hidden for every other provider.
 - Collapsed: a mini progress bar plus the **5-hour rolling** window usage percentage; `—` while loading or unavailable.
-- Hover (or focus, or click to pin) to expand a panel with **Rolling / Weekly / Monthly**: each row shows the window, the usage (bar + percentage kept together) and the reset countdown in aligned columns (e.g. `Resets in 4h 54m`).
+- Hover (or focus, or click to pin) to expand a panel with **Rolling / Weekly / Monthly**: each row keeps a window label, a fixed 48px usage bar with the percentage right next to it, and a left-aligned reset countdown (`Resets in 4h 54m`).
 - Same visual language as the native context-window meter: shared theme tokens, font size, radii, hover background and panel elevation, following light/dark mode.
 - The API key stays in the Host; the browser only receives percentages and reset times.
 

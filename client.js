@@ -130,15 +130,16 @@ window.__ModuleLoader__.load({
   font-weight: 500;
   font-variant-numeric: tabular-nums;
 }
-/* One shared grid for all three rows: the window label, the usage group (bar +
-   percent kept together) and the reset countdown each keep a common column. */
-.ogq-rows { display: grid; grid-template-columns: 62px 1fr auto; column-gap: 8px; row-gap: 8px; align-items: center; margin: 10px 0 0; }
+/* One shared grid for all three rows: the fixed-width window label, the usage
+   group (fixed-width bar + the number right next to it) and the left-aligned
+   reset countdown each keep a common column, so all three rows line up. */
+.ogq-rows { display: grid; grid-template-columns: 62px max-content 1fr; column-gap: 8px; row-gap: 8px; align-items: center; margin: 10px 0 0; }
 .ogq-row { display: contents; }
 .ogq-row-label { color: var(--dsw-alias-label-secondary); white-space: nowrap; }
 .ogq-row-usage { display: flex; align-items: center; gap: 6px; min-width: 0; }
 .ogq-row-bar {
-  flex: 1 1 auto;
-  min-width: 24px;
+  flex: none;
+  width: 48px;
   height: 4px;
   border-radius: 999px;
   background: var(--dsw-alias-interactive-bg-hover);
@@ -146,15 +147,12 @@ window.__ModuleLoader__.load({
 }
 .ogq-row-fill { display: block; height: 100%; border-radius: 999px; background: var(--dsw-alias-label-tertiary); }
 .ogq-row-percent {
-  flex: none;
-  width: 40px;
-  text-align: right;
   color: var(--dsw-alias-label-primary);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 .ogq-row-reset {
-  justify-self: end;
+  justify-self: start;
   color: var(--dsw-alias-label-tertiary);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
