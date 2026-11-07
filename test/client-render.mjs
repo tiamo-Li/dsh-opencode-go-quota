@@ -59,6 +59,7 @@ const directoryStore = createStore({ current: { provider: 'opencode-go', model: 
 const regs = []
 const dict = {
   aria: 'OpenCode Go 五小时额度已用 {percent}',
+  go: 'Go',
   title: 'OpenCode Go quota',
   rolling: 'Rolling',
   weekly: 'Weekly',
@@ -138,6 +139,7 @@ await flush(10)
 let trigger = container.querySelector('[data-composer-stat="opencode-go-quota"]')
 check(trigger !== null, 'trigger renders for an OpenCode Go model')
 check(trigger.querySelector('.ogq-bar') !== null, 'collapsed trigger has a mini bar')
+check(trigger.querySelector('.ogq-go')?.textContent === 'Go', 'collapsed trigger shows the Go label before the bar')
 check(trigger.querySelector('.ogq-percent').textContent === '—', 'loading state shows the dash')
 check(trigger.getAttribute('aria-label') === 'Quota unavailable', 'loading aria label')
 
@@ -197,6 +199,7 @@ if (softFail.length > 0) {
 }
 console.log('client-render: all DOM checks passed')
 process.exit(0)
+
 
 
 

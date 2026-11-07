@@ -158,7 +158,7 @@ ctx.effect(() => ctx.slots.inject('conversation.composer.dock', function* () {
 
 折叠触发器（button）：
 
-- 内容：`<span class="ogq-bar"><span class="ogq-fill" style="width:{p}%"/></span><span>{p}%</span>`。
+- 内容：`<span class="ogq-go">Go</span><span class="ogq-bar"><span class="ogq-fill" style="width:{p}%"/></span><span class="ogq-percent">{p}%</span>`。
 - 视觉 = ContextMeter 的 trigger：`color: var(--dsw-alias-label-tertiary)`、`font-size: var(--dsh-content-font-size-secondary,13px)`、`line-height: calc(20px + var(--dsh-content-font-delta-secondary,0px))`、`font-variant-numeric: tabular-nums`、`padding: 1px 8px`、`border-radius: var(--dsw-radius-sm)`、`gap: 6px`、透明背景无边框；hover / `[aria-expanded="true"]`：`background: var(--dsw-alias-interactive-bg-hover)`、`color: var(--dsw-alias-label-secondary)`。
 - 进度条：宽 20px、高 4px、`border-radius: 999px`、底 `var(--dsw-alias-border-l3)`、填充 `currentColor`；百分比越高可保持同色（v1 不换色），`percent >= 100` 时填充用 `var(--dsw-alias-label-secondary)`。
 - `aria-label` = `t('aria', { percent })`，例如「OpenCode Go 五小时额度已用 12%」；`aria-haspopup="dialog"`、`aria-expanded`。
@@ -218,6 +218,7 @@ ctx.effect(() => ctx.slots.inject('conversation.composer.dock', function* () {
    - verifier 的隔离 `dsh web` e2e：boot 图含该模块行；`/plugins/dsh-opencode-go-quota/client.js` 可下载且语法可加载；`/api/opencode-go-quota/usage` 返回真实百分数。
    - jsdom 渲染测试：默认折叠、悬停展开三行、provider 不匹配不渲染。
 3. 最终由用户在 GUI 目测确认样式与位置。
+
 
 
 

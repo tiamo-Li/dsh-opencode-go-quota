@@ -23,6 +23,7 @@ window.__ModuleLoader__.load({
     // fixed-width Latin text keeps the label, bar and reading columns aligned.
     const zh = {
       'aria': 'OpenCode Go 五小时额度已用 {percent}',
+      'go': 'Go',
       'title': 'OpenCode Go quota',
       'rolling': 'Rolling',
       'weekly': 'Weekly',
@@ -35,6 +36,7 @@ window.__ModuleLoader__.load({
 
     const en = {
       'aria': 'OpenCode Go 5-hour quota {percent} used',
+      'go': 'Go',
       'title': 'OpenCode Go quota',
       'rolling': 'Rolling',
       'weekly': 'Weekly',
@@ -96,6 +98,7 @@ window.__ModuleLoader__.load({
   background: currentColor;
   transition: width 160ms ease;
 }
+.ogq-go { color: var(--dsw-alias-label-secondary); font-weight: 500; letter-spacing: .2px; }
 .ogq-percent { font-variant-numeric: tabular-nums; }
 .ogq-trigger[data-state="loading"] .ogq-bar,
 .ogq-trigger[data-state="unavailable"] .ogq-bar,
@@ -733,6 +736,7 @@ window.__ModuleLoader__.load({
                 }
               },
             },
+            h('span', { className: 'ogq-go' }, t('go')),
             h(
               'span',
               { className: 'ogq-bar', 'aria-hidden': true },
@@ -807,3 +811,4 @@ window.__ModuleLoader__.load({
     }
   },
 })
+
