@@ -1,0 +1,14 @@
+# Bundle patch layer for dsh-opencode-go-quota.
+# Applied when this bundle is selected in the profile: insert the plugin row.
+- insert:
+    - id: opencode-go-quota
+      name: dsh-opencode-go-quota
+      config:
+        apiKeyEnv: OPENCODE_GO_API_KEY
+        baseURL: 'https://opencode.ai/zen/go/v1'
+        providers:
+          - opencode-go
+          - dsh-opencode-go
+        pollMs: 60000
+        cacheMs: 20000
+        timeoutMs: 10000

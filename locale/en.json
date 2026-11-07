@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "OpenCode Go Quota",
+    "description": "Show the OpenCode Go subscription's 5-hour, weekly and monthly quota usage in the composer dock."
+  }
+}

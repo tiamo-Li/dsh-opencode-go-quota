@@ -1,0 +1,14 @@
+# Dependencies / build output
+node_modules/
+*.tgz
+*.log
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local scratch
+_tmp/
+*.local
