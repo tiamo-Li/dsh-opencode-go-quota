@@ -104,8 +104,9 @@ window.__ModuleLoader__.load({
   z-index: 1100;
   box-sizing: border-box;
   position: fixed;
-  width: min(320px, calc(100vw - 24px));
-  max-width: var(--dsh-anchored-max-width, none);
+  width: fit-content;
+  min-width: 300px;
+  max-width: min(340px, calc(100vw - 24px));
   max-height: var(--dsh-anchored-max-height, none);
   border-radius: var(--dsw-radius-lg);
   background: var(--dsw-specific-menu);
@@ -132,8 +133,9 @@ window.__ModuleLoader__.load({
 }
 /* One shared grid for all three rows: the fixed-width window label, the usage
    group (fixed-width bar + the number right next to it) and the left-aligned
-   reset countdown each keep a common column, so all three rows line up. */
-.ogq-rows { display: grid; grid-template-columns: 62px max-content 1fr; column-gap: 8px; row-gap: 8px; align-items: center; margin: 10px 0 0; }
+   reset countdown each keep a common column. The panel shrinks to this content
+   (width: fit-content) so there is no dead space on the right. */
+.ogq-rows { display: grid; grid-template-columns: 62px max-content max-content; column-gap: 16px; row-gap: 8px; align-items: center; margin: 10px 0 0; }
 .ogq-row { display: contents; }
 .ogq-row-label { color: var(--dsw-alias-label-secondary); white-space: nowrap; }
 .ogq-row-usage { display: flex; align-items: center; gap: 6px; min-width: 0; }
