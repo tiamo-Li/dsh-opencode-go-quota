@@ -123,9 +123,10 @@ assert.ok(styleTags[0].textContent.includes('.ogq-trigger'))
 assert.ok(styleTags[0].textContent.includes('var(--dsw-radius-sm)'))
 assert.ok(styleTags[0].textContent.includes('.ogq-panel'))
 assert.match(styleTags[0].textContent, /\.ogq-root\s*\{[^}]*order:\s*1/, 'root uses CSS order to sit after the context meter')
-assert.match(styleTags[0].textContent, /\.ogq-rows\s*\{[^}]*grid-template-columns:\s*62px max-content max-content/, 'shared grid keeps the three row columns aligned')
-assert.match(styleTags[0].textContent, /\.ogq-rows\s*\{[^}]*column-gap:\s*16px/, 'a wider gap separates the usage group from the reset column')
+assert.match(styleTags[0].textContent, /\.ogq-rows\s*\{[^}]*grid-template-columns:\s*max-content max-content max-content/, 'shared grid keeps the three row columns aligned')
+assert.match(styleTags[0].textContent, /\.ogq-rows\s*\{[^}]*column-gap:\s*14px/, 'a 14px gap separates the usage group from the reset column')
 assert.match(styleTags[0].textContent, /\.ogq-panel\s*\{[^}]*width:\s*fit-content/, 'panel shrinks to its content instead of leaving dead space')
+assert.match(styleTags[0].textContent, /\.ogq-panel\s*\{[^}]*min-width:\s*272px/, 'panel minimum width is compact')
 assert.match(styleTags[0].textContent, /\.ogq-row-usage\s*\{[^}]*display:\s*flex/, 'bar and percent share one usage group')
 assert.match(styleTags[0].textContent, /\.ogq-row-bar\s*\{[^}]*width:\s*48px/, 'usage bar keeps a fixed track width next to the number')
 assert.match(styleTags[0].textContent, /\.ogq-row-reset\s*\{[^}]*justify-self:\s*start/, 'reset countdown is left aligned')
@@ -177,6 +178,7 @@ const throwingInjected = descriptor.inject.call(throwingCtx, 'session-1')
 assert.ok(throwingInjected !== undefined)
 
 console.log('client-smoke: all structural checks passed')
+
 
 
 

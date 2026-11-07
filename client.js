@@ -105,7 +105,7 @@ window.__ModuleLoader__.load({
   box-sizing: border-box;
   position: fixed;
   width: fit-content;
-  min-width: 300px;
+  min-width: 272px;
   max-width: min(340px, calc(100vw - 24px));
   max-height: var(--dsh-anchored-max-height, none);
   border-radius: var(--dsw-radius-lg);
@@ -116,7 +116,7 @@ window.__ModuleLoader__.load({
   color: var(--dsw-alias-label-secondary);
   cursor: default;
   border: 0;
-  padding: 12px;
+  padding: 10px 12px;
   font-size: 12px;
   line-height: 20px;
   overflow: hidden auto;
@@ -131,11 +131,11 @@ window.__ModuleLoader__.load({
   font-weight: 500;
   font-variant-numeric: tabular-nums;
 }
-/* One shared grid for all three rows: the fixed-width window label, the usage
-   group (fixed-width bar + the number right next to it) and the left-aligned
-   reset countdown each keep a common column. The panel shrinks to this content
-   (width: fit-content) so there is no dead space on the right. */
-.ogq-rows { display: grid; grid-template-columns: 62px max-content max-content; column-gap: 16px; row-gap: 8px; align-items: center; margin: 10px 0 0; }
+/* One shared grid for all three rows: the window label, the usage group
+   (fixed-width bar + the number right next to it) and the left-aligned reset
+   countdown each keep a common column. Every column is sized to its own content
+   and the panel shrinks around it, so no column gets surplus width. */
+.ogq-rows { display: grid; grid-template-columns: max-content max-content max-content; column-gap: 14px; row-gap: 8px; align-items: center; margin: 8px 0 0; }
 .ogq-row { display: contents; }
 .ogq-row-label { color: var(--dsw-alias-label-secondary); white-space: nowrap; }
 .ogq-row-usage { display: flex; align-items: center; gap: 6px; min-width: 0; }
