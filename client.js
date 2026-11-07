@@ -98,7 +98,14 @@ window.__ModuleLoader__.load({
   background: currentColor;
   transition: width 160ms ease;
 }
-.ogq-go { color: var(--dsw-alias-label-secondary); font-weight: 500; letter-spacing: .2px; }
+/* The Go tag borrows the dock's "session stats" / "token usage" pill typography:
+   one pixel smaller than the trigger, tertiary color, regular weight. */
+.ogq-go {
+  color: var(--dsw-alias-label-tertiary);
+  font-size: calc(var(--dsh-content-font-size-secondary, 13px) - 1px);
+  font-weight: 400;
+  letter-spacing: normal;
+}
 .ogq-percent { font-variant-numeric: tabular-nums; }
 .ogq-trigger[data-state="loading"] .ogq-bar,
 .ogq-trigger[data-state="unavailable"] .ogq-bar,

@@ -123,6 +123,9 @@ assert.ok(styleTags[0].textContent.includes('.ogq-trigger'))
 assert.ok(styleTags[0].textContent.includes('var(--dsw-radius-sm)'))
 assert.ok(styleTags[0].textContent.includes('.ogq-panel'))
 assert.ok(styleTags[0].textContent.includes('.ogq-go'), 'Go label has its own style')
+assert.match(styleTags[0].textContent, /\.ogq-go\s*\{[^}]*color:\s*var\(--dsw-alias-label-tertiary\)/, 'Go label uses the dock pill tertiary color')
+assert.match(styleTags[0].textContent, /\.ogq-go\s*\{[^}]*font-size:\s*calc\(var\(--dsh-content-font-size-secondary, 13px\) - 1px\)/, 'Go label uses the dock stats pill type scale')
+assert.match(styleTags[0].textContent, /\.ogq-go\s*\{[^}]*font-weight:\s*400/, 'Go label uses regular weight')
 assert.match(styleTags[0].textContent, /\.ogq-root\s*\{[^}]*order:\s*1/, 'root uses CSS order to sit after the context meter')
 assert.match(styleTags[0].textContent, /\.ogq-rows\s*\{[^}]*grid-template-columns:\s*max-content max-content max-content/, 'shared grid keeps the three row columns aligned')
 assert.match(styleTags[0].textContent, /\.ogq-rows\s*\{[^}]*column-gap:\s*14px/, 'a 14px gap separates the usage group from the reset column')
@@ -182,6 +185,7 @@ const throwingInjected = descriptor.inject.call(throwingCtx, 'session-1')
 assert.ok(throwingInjected !== undefined)
 
 console.log('client-smoke: all structural checks passed')
+
 
 
 

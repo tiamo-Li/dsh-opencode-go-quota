@@ -156,7 +156,7 @@ ctx.effect(() => ctx.slots.inject('conversation.composer.dock', function* () {
 
 状态：`idle/loading` → 折叠显示 `—`；`ready` → 折叠显示 `[短横线进度条] {rolling.percent}%`；`error` → 折叠显示 `—`（tooltip 显示错误摘要，可点击重试）。
 
-折叠触发器（button）：
+折叠触发器（button）：`Go` 标签沿用 dock 中「会话统计 / token 用量」组件的排版（`font-size: calc(var(--dsh-content-font-size-secondary, 13px) - 1px)`、`color: var(--dsw-alias-label-tertiary)`、常规字重），随后是迷你条与百分比。
 
 - 内容：`<span class="ogq-go">Go</span><span class="ogq-bar"><span class="ogq-fill" style="width:{p}%"/></span><span class="ogq-percent">{p}%</span>`。
 - 视觉 = ContextMeter 的 trigger：`color: var(--dsw-alias-label-tertiary)`、`font-size: var(--dsh-content-font-size-secondary,13px)`、`line-height: calc(20px + var(--dsh-content-font-delta-secondary,0px))`、`font-variant-numeric: tabular-nums`、`padding: 1px 8px`、`border-radius: var(--dsw-radius-sm)`、`gap: 6px`、透明背景无边框；hover / `[aria-expanded="true"]`：`background: var(--dsw-alias-interactive-bg-hover)`、`color: var(--dsw-alias-label-secondary)`。
@@ -218,6 +218,7 @@ ctx.effect(() => ctx.slots.inject('conversation.composer.dock', function* () {
    - verifier 的隔离 `dsh web` e2e：boot 图含该模块行；`/plugins/dsh-opencode-go-quota/client.js` 可下载且语法可加载；`/api/opencode-go-quota/usage` 返回真实百分数。
    - jsdom 渲染测试：默认折叠、悬停展开三行、provider 不匹配不渲染。
 3. 最终由用户在 GUI 目测确认样式与位置。
+
 
 
 
