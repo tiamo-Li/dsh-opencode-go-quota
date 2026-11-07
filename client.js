@@ -116,7 +116,7 @@ window.__ModuleLoader__.load({
   color: var(--dsw-alias-label-secondary);
   cursor: default;
   border: 0;
-  padding: 10px 12px;
+  padding: 10px 12px 10px 16px;
   font-size: 12px;
   line-height: 20px;
   overflow: hidden auto;
@@ -127,6 +127,7 @@ window.__ModuleLoader__.load({
 .ogq-head-title { color: var(--dsw-alias-label-tertiary); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .ogq-head-value {
   margin-left: auto;
+  margin-right: 6px;
   color: var(--dsw-alias-label-primary);
   font-weight: 500;
   font-variant-numeric: tabular-nums;
