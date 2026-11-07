@@ -9,6 +9,8 @@ A small [DeepSeek Harness (DSH)](https://github.com/deepseek-ai/deepseek-harness
 
 [中文](./README.md) | English
 
+![Quota indicator: Go label and 5-hour percentage in the composer dock, expanding on hover into Rolling / Weekly / Monthly](./docs/assets/panel.png)
+
 It adds a quota indicator to the composer dock (the stats row below the message input), **to the right of the context-window ring**:
 
 - Only visible when the session's selected model belongs to OpenCode Go (`opencode-go` or `dsh-opencode-go`); hidden for every other provider.

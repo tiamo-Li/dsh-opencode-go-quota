@@ -9,6 +9,8 @@
 
 [English](./README.en.md) | 中文
 
+![额度指示器效果：会话底部显示 Go 与五小时百分比，悬停展开 Rolling / Weekly / Monthly](./docs/assets/panel.png)
+
 在会话输入框下方的统计条里，位于「上下文窗口」百分比环的**右侧**，常驻一枚额度指示器：
 
 - 只有当前会话选中的模型属于 OpenCode Go 订阅（provider 为 `opencode-go` 或 `dsh-opencode-go`）时才显示；切到其它 provider 自动隐藏。
